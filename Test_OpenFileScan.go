@@ -19,6 +19,7 @@ func main() {
 	for scanner.Scan() {
 		line := scanner.Text() // line is the string
 		if strings.Contains(line, "hello") {
+			//strings是自带Contains的！
 			fmt.Println("Hello World")
 			fmt.Println("found it")
 			findit = true

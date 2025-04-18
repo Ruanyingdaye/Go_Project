@@ -13,6 +13,8 @@ func main() {
 
 	fmt.Println("******************************************************")
 
+	//结论 遍历string得到的是rune
+
 	for _, item := range sss {
 		fmt.Println(item)
 		// 这就是说明，遍历过来的是rune数据，需要进行转换才可以

@@ -21,6 +21,7 @@ import (
 // uintPtr
 // 为什么要用uint？？
 
+// 实现一个hashmap
 type myhash struct {
 	arr     []*myNode
 	hashInt int
@@ -34,17 +35,14 @@ type myNode struct {
 }
 
 func (h *myhash) get(val int) int {
+	// 没找到就返回最大值
 	index := val % h.hashInt
-	if index >= len(h.arr) {
-		return math.MaxInt
-	} else {
-		node := h.arr[index-1]
-		for node != nil {
-			if node.key == val {
-				return node.value
-			}
-			node = node.next
+	node := h.arr[index-1]
+	for node != nil {
+		if node.key == val {
+			return node.value
 		}
+		node = node.next
 	}
 	return math.MaxInt
 }

@@ -11,6 +11,14 @@ type MyObject struct {
 
 func main() {
 	// 创建一个对象池
+
+	// objPool :=  sync.Pool{
+	// 	New: func() interface{}{
+	// 		fmt.Println("abc")
+	// 		return &MyObject{}
+	// 	},
+	// }
+
 	objectPool := sync.Pool{
 		New: func() interface{} {
 			fmt.Println("Creating a new object")

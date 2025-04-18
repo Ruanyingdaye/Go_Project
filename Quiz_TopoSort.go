@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+// 有向无环图的拓扑排序,还不算是入度出度的那个，一个节点的前面可能有X个parents
+
 type Node struct {
 	id      rune
 	parents []rune
@@ -9,6 +11,7 @@ type Node struct {
 
 func topoSort(nodes []Node) {
 	topoInMap := make(map[rune]int)
+	//初始化每个node的时候，前置已经init了
 	for _, node := range nodes {
 		topoInMap[node.id] += len(node.parents)
 	}
